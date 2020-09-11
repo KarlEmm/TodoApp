@@ -1,5 +1,10 @@
 {% extends "todos/base.html" %}
 
 {% block content %}
-  <h1>HOWDY</h1>
+  <ul>
+    {% for task in tasks %}
+      <li><a href="{% url "todos:task" task_id=task.id %}">{{ task.main }}</a></li>
+    {% endfor %}
+  </ul>
+
 {% endblock content %}
